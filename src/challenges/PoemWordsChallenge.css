@@ -1,0 +1,79 @@
+.pw-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem 1.5rem 5rem;
+  background: var(--bg);
+}
+
+.pw-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 0;
+}
+
+/* Grade de palavras */
+.pw-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 860px;
+  width: 100%;
+}
+
+/* Botão de palavra */
+.pw-word {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+
+.pw-word:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.pw-word-selected {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Rodapé com contador e botão */
+.pw-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 320px;
+  position: sticky;
+  bottom: 1.5rem;
+}
+
+.pw-count {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.pw-submit {
+  width: 100%;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+}

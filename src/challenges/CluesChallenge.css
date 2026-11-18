@@ -1,0 +1,59 @@
+.clues-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* Bloco de código central */
+.clues-code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  word-break: break-all;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* Lista de pistas */
+.clues-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+.clues-list li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.clues-mono {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+/* Input centralizado */
+.clues-form {
+  align-items: center;
+  max-width: 320px;
+  width: 100%;
+}
+
+.clues-form .challenge-input {
+  text-align: center;
+}
+
+.clues-form .challenge-btn {
+  width: 100%;
+}

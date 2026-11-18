@@ -1,0 +1,90 @@
+.ws-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.ws-hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* Grade */
+.ws-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: crosshair;
+  touch-action: none; /* impede scroll durante o arrasto */
+}
+
+.ws-frozen {
+  cursor: default;
+}
+
+.ws-row {
+  display: flex;
+}
+
+.ws-cell {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.08s, color 0.08s;
+  flex-shrink: 0;
+}
+
+.ws-cell:last-child {
+  border-right: none;
+}
+
+.ws-row:last-child .ws-cell {
+  border-bottom: none;
+}
+
+.ws-cell-selected {
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Confirmação após achar a palavra */
+.ws-confirm-form {
+  width: 100%;
+  max-width: 340px;
+}
+
+.ws-found-msg {
+  font-size: 0.82rem;
+  color: var(--success);
+  letter-spacing: 0.04em;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile: célula menor para caber na tela */
+@media (max-width: 700px) {
+  .ws-cell {
+    width: 13px;
+    height: 13px;
+    font-size: 0.45rem;
+  }
+}

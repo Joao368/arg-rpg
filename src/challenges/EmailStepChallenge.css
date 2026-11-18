@@ -1,0 +1,47 @@
+.es-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 2.5rem;
+  padding: 2rem;
+  background: var(--bg);
+}
+
+.es-instruction {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.es-email {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  word-break: break-all;
+}
+
+.es-email:hover {
+  opacity: 0.8;
+}
+
+.es-form {
+  align-items: center;
+  max-width: 320px;
+  width: 100%;
+}
+
+.es-form .challenge-input {
+  text-align: center;
+}
+
+.es-form .challenge-btn {
+  width: 100%;
+}

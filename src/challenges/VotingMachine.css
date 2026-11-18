@@ -1,0 +1,334 @@
+.vm-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  width: 100%;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.vm-header-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Corpo da urna ── */
+.vm-machine {
+  display: flex;
+  gap: 0;
+  background: #c8c8c0;
+  border-radius: 10px 10px 14px 14px;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.4),
+    inset 0 -2px 6px rgba(0,0,0,0.25),
+    0 8px 32px rgba(0,0,0,0.5);
+  padding: 16px 16px 20px;
+  gap: 14px;
+  width: 100%;
+  max-width: 540px;
+}
+
+/* ── Lado esquerdo: display ── */
+.vm-left {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.vm-screen {
+  background: #1a2a1a;
+  border-radius: 6px;
+  border: 3px solid #333;
+  box-shadow:
+    inset 0 0 12px rgba(0,0,0,0.6),
+    0 2px 4px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.vm-screen-header {
+  background: #1a3a6a;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0d2244;
+}
+
+.vm-je-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  font-family: Arial, sans-serif;
+}
+
+.vm-cargo {
+  font-size: 0.58rem;
+  color: #aac4e8;
+  font-family: Arial, sans-serif;
+}
+
+.vm-screen-body {
+  flex: 1;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #1a2a1a;
+}
+
+.vm-screen-label {
+  font-size: 0.6rem;
+  color: #7af07a;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+/* Dígitos no display */
+.vm-digits {
+  display: flex;
+  gap: 6px;
+}
+
+.vm-digit {
+  width: 28px;
+  height: 36px;
+  background: #0d1a0d;
+  border: 1px solid #2a4a2a;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #7af07a;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.vm-digit-empty {
+  color: #2a4a2a;
+}
+
+/* Info do candidato */
+.vm-candidate-info {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: vmFadeIn 0.25s ease;
+}
+
+.vm-candidate-num {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #7af07a;
+  margin: 0;
+}
+
+.vm-candidate-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ccffcc;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vm-candidate-partido {
+  font-size: 0.6rem;
+  color: #7af07a;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.vm-screen-hint {
+  font-size: 0.58rem;
+  color: #3a6a3a;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Resultado */
+.vm-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 8px;
+  animation: vmFadeIn 0.3s ease;
+}
+
+.vm-result-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-align: center;
+}
+
+.vm-result-ok .vm-result-title { color: #7af07a; }
+.vm-result-err .vm-result-title { color: #f07a7a; }
+
+.vm-result-name {
+  font-size: 0.65rem;
+  font-family: Arial, sans-serif;
+  color: #ccffcc;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.vm-result-hint {
+  font-size: 0.58rem;
+  color: #f07a7a;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Lado direito: teclado ── */
+.vm-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vm-je-badge {
+  background: #e8e8e0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 4px 8px;
+  text-align: right;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.vm-je-badge-text {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+}
+
+/* Grade 3×3 + 0 */
+.vm-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.vm-key-spacer {
+  /* ocupa o espaço do 0 centralizado */
+}
+
+.vm-action-keys {
+  display: flex;
+  gap: 4px;
+}
+
+/* Base de todos os botões */
+.vm-key {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  transition: filter 0.1s, transform 0.08s;
+  box-shadow:
+    0 3px 0 rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  user-select: none;
+}
+
+.vm-key:active,
+.vm-key-flash {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+  filter: brightness(0.85);
+}
+
+/* Numérico */
+.vm-key-num {
+  background: #2a2a2a;
+  color: #e8e8e0;
+  font-size: 1rem;
+  padding: 10px 0;
+  letter-spacing: 0.02em;
+}
+
+.vm-key-num:hover {
+  background: #3a3a3a;
+}
+
+/* Ação */
+.vm-key-branco {
+  flex: 1;
+  background: #e8e8d0;
+  color: #333;
+  font-size: 0.5rem;
+  padding: 7px 2px;
+  letter-spacing: 0.04em;
+}
+
+.vm-key-corrige {
+  flex: 1;
+  background: #c84a00;
+  color: #fff;
+  font-size: 0.5rem;
+  padding: 7px 2px;
+  letter-spacing: 0.04em;
+}
+
+.vm-key-confirma {
+  flex: 1.2;
+  background: #1a7a1a;
+  color: #fff;
+  font-size: 0.5rem;
+  padding: 7px 2px;
+  letter-spacing: 0.04em;
+}
+
+.vm-key-branco:hover  { filter: brightness(1.1); }
+.vm-key-corrige:hover { filter: brightness(1.15); }
+.vm-key-confirma:hover { filter: brightness(1.15); }
+
+/* Animação */
+@keyframes vmFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .vm-machine {
+    flex-direction: column;
+    max-width: 320px;
+  }
+
+  .vm-screen {
+    min-height: 160px;
+  }
+
+  .vm-digit {
+    width: 22px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
